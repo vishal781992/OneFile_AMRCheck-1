@@ -36,8 +36,8 @@ namespace OneFile_AMRCheck
             this.textBox_Server19 = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox_initials = new System.Windows.Forms.TextBox();
-            this.checkBox_StartProcessDB = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer_FileUpload
@@ -95,16 +95,6 @@ namespace OneFile_AMRCheck
             this.textBox_initials.TabIndex = 14;
             this.textBox_initials.Text = "VCauto";
             // 
-            // checkBox_StartProcessDB
-            // 
-            this.checkBox_StartProcessDB.AutoSize = true;
-            this.checkBox_StartProcessDB.Location = new System.Drawing.Point(22, 345);
-            this.checkBox_StartProcessDB.Name = "checkBox_StartProcessDB";
-            this.checkBox_StartProcessDB.Size = new System.Drawing.Size(134, 17);
-            this.checkBox_StartProcessDB.TabIndex = 16;
-            this.checkBox_StartProcessDB.Text = "Start/Stop the Process";
-            this.checkBox_StartProcessDB.UseVisualStyleBackColor = true;
-            // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
@@ -115,14 +105,24 @@ namespace OneFile_AMRCheck
             this.checkBox1.Text = "stop File check Log";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(22, 345);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(427, 33);
+            this.button1.TabIndex = 18;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(461, 369);
+            this.ClientSize = new System.Drawing.Size(461, 390);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.checkBox_StartProcessDB);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.textBox_initials);
             this.Controls.Add(this.textBox_Server19);
@@ -143,8 +143,8 @@ namespace OneFile_AMRCheck
         private System.Windows.Forms.TextBox textBox_Server19;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox textBox_initials;
-        private System.Windows.Forms.CheckBox checkBox_StartProcessDB;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
 

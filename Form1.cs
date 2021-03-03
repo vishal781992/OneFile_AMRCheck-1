@@ -22,7 +22,7 @@ namespace OneFile_AMRCheck
         public Form1()
         {
             InitializeComponent();
-            this.Text = "OneFileUploader Beta1";
+            this.Text = "OneFileUploader 00.01.A";
         }
 
         public List<string> OneFile_MeterID = new List<string>();
@@ -32,7 +32,7 @@ namespace OneFile_AMRCheck
         string[] DataBasenames = new[] { "AlsoEnergy2021Vision", "AlsoEnergy2019Vision" , "AlsoEnergyReturnsVision"};
         
         long _tick;
-
+        bool flag_buttonPressed = false;
 
 
         private void timer_FileUpload_Tick(object sender, EventArgs e)
@@ -41,11 +41,11 @@ namespace OneFile_AMRCheck
 
             _tick++;
 
-            if (!string.IsNullOrEmpty(textBox_Server19.Text) && checkBox_StartProcessDB.Checked && !string.IsNullOrEmpty(textBox_initials.Text))
+            if (!string.IsNullOrEmpty(textBox_Server19.Text) && flag_buttonPressed && !string.IsNullOrEmpty(textBox_initials.Text))
             {
                 OneFile_IPAddr.Clear(); OneFile_IPAddr.Clear(); string DataBasenameForTheProcess = string.Empty;
-                richTextBox2.AppendText(_tick%2==0? Environment.NewLine + "................../": Environment.NewLine + "..................\\");
-                if (_tick % 1000 == 0)
+                richTextBox2.AppendText(_tick%2==0? Environment.NewLine + "                  /": Environment.NewLine + "                  \\");
+                if (_tick % 500 == 0)
                 {
                     OneFile_IPAddr.Clear(); OneFile_IPAddr.Clear();
                     if(FileParseFromServer19())
@@ -117,6 +117,18 @@ namespace OneFile_AMRCheck
             catch
             {
                 richTextBox2.AppendText(Environment.NewLine + "File not found");return false;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(flag_buttonPressed)
+            {
+                flag_buttonPressed = false;
+            }
+            else if (!flag_buttonPressed)
+            {
+                flag_buttonPressed = true;
             }
         }
     }
